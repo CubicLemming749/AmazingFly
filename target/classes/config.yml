@@ -1,0 +1,27 @@
+Config:
+  options:
+    # IMPORTANT! RESTRICTED GAMEMODES NAMES **NEED** TO BE IN CAPITAL LETTER, OTHERWISE THE PLUGIN
+    # WILL FAIL!
+    #To turn off this option just write a "[]"
+    # gamemode-restriction: []
+    gamemode-restriction:
+      - CREATIVE
+    # Should the plugin send a message to the target when someone else activates flight mode?
+    send-message-to-target-on: true
+
+    # Should the plugin send a message to the target when someone else deactivates flight mode?
+    send-message-to-target-off: true
+
+  lang:
+    prefix: "&7[&bAmazingFly&7] "
+    restricted-gamemode: "&cYou can't use &6/fly &cwhile using this gamemode."
+    no-permissions: "&cYou don't have necessary permission. &7(amazingfly.use)"
+    console-error: "&cYou can't use this command on console."
+    plugin-reload: "&aThe plugin was reloaded successfully."
+    fly-activated: "&fYou &aactivated &ffly mode."
+    fly-deactivated: "&fYou &cdeactivated &ffly mode."
+    fly-activated-other: "&aYou activated fly mode to {PLAYER}."
+    fly-deactivated-other: "&cYou deactivated fly mode to {PLAYER}."
+    fly-activated-sender: "&a{SENDER} has activated fly mode for you." #send-message-to-target-on needs to be true.
+    fly-deactivated-sender: "&c{SENDER} has deactivated fly mode for you." #send-message-to-target-off needs to be true.
+    fly-others-error: "&c{PLAYER} doesn't exist."

@@ -1,0 +1,6 @@
+pr\cubicdev\amazingfly\Managers\ConfigManager.class
+pr\cubicdev\amazingfly\Commands\FlyCommand.class
+pr\cubicdev\amazingfly\Utils\MessageUtils.class
+pr\cubicdev\amazingfly\Utils\FlyUtils.class
+pr\cubicdev\amazingfly\Managers\MessageManager.class
+pr\cubicdev\amazingfly\AmazingFly.class
