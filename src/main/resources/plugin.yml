@@ -1,0 +1,9 @@
+name: AmazingFly
+version: '${project.version}'
+main: pr.cubicdev.amazingfly.AmazingFly
+api-version: '1.16'
+commands:
+  fly:
+    description: "Main command of the plugin"
+    usage: /fly [reload]
+    permission: amazingfly.use
