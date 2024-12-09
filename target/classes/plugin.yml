@@ -2,6 +2,8 @@ name: AmazingFly
 version: '1.0.0'
 main: pr.cubicdev.amazingfly.AmazingFly
 api-version: '1.16'
+softdepend:
+  - PlaceholderAPI
 commands:
   fly:
     description: "Main command of the plugin"

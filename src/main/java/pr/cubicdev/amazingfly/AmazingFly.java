@@ -3,6 +3,7 @@ package pr.cubicdev.amazingfly;
 import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.plugin.java.JavaPlugin;
 import pr.cubicdev.amazingfly.Commands.FlyCommand;
+import pr.cubicdev.amazingfly.Hooks.PlaceholderAPI;
 import pr.cubicdev.amazingfly.Managers.ConfigManager;
 import pr.cubicdev.amazingfly.Managers.MessageManager;
 import pr.cubicdev.amazingfly.Utils.MessageUtils;
@@ -32,6 +33,10 @@ public final class AmazingFly extends JavaPlugin {
 
         //Registrar cosas xd
         registerCommands();
+
+        if(getServer().getPluginManager().isPluginEnabled("PlaceholderAPI")){
+            new PlaceholderAPI().register();
+        }
     }
 
     @Override
