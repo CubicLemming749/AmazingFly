@@ -19,20 +19,20 @@ public class PlaceholderAPI extends PlaceholderExpansion {
 
     @Override
     public @NotNull String getVersion() {
-        return "1.0.0";
+        return "1.2.0";
     }
 
     @Override
     public String onPlaceholderRequest(Player player, @NotNull String params) {
         if (params.equalsIgnoreCase("isflying")) {
-            return String.valueOf(FlyUtils.isFlying(player));
+            return String.valueOf(FlyUtils.hasFly(player));
         }else if(params.startsWith("isflying_")){
             String targetName = params.substring("flymode".length());
             Player target = Bukkit.getPlayer(targetName);
             if(target == null){
                 return "Player is not online";
             }else{
-                return String.valueOf(FlyUtils.isFlying(target));
+                return String.valueOf(FlyUtils.hasFly(target));
             }
         }
 

@@ -1,11 +1,43 @@
 name: AmazingFly
-version: '1.0.0'
+version: '1.2.0'
 main: pr.cubicdev.amazingfly.AmazingFly
 api-version: '1.16'
 softdepend:
   - PlaceholderAPI
+  - WorldGuard
 commands:
   fly:
     description: "Main command of the plugin"
-    usage: /fly [reload]
-    permission: amazingfly.use
+    usage: /fly [player]
+  rfly:
+    description: "Region fly, worldguard hook"
+    usage: /rfly
+    aliases:
+      - regionfly
+  afly:
+    description: "Admin commands"
+permissions:
+  amazingfly.bypass.gamemodes:
+    description: "Bypass restricted gamemodes"
+  amazingfly.bypass.pvp-restriction:
+    description: "Bypass pvp-restriction"
+  amazingfly.use:
+    description: "Main command of the plugin, allows you to fly"
+    default: op
+  amazingfly.use.others:
+    description: "Use /fly command on others"
+    default: op
+  amazingfly.bypass.*:
+    description: "Bypass all"
+    default: op
+  amazingfly.use.worldguard:
+    description: "If the player should use fly in protected regions"
+    default: op
+  amazingfly.admin:
+    default: op
+    description: "Admin commands, currently /fly <other>, /rfly and /afly reload"
+    children:
+      - amazingfly.use: true
+      - amazingfly.use.others: true
+      - amazingfly.use.worldguard: true
+      - amazingfly.bypass: true

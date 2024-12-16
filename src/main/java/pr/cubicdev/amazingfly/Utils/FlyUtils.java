@@ -13,7 +13,8 @@ public class FlyUtils {
         player.setFlying(false);
     }
 
-    public static boolean isFlying(Player player){
-        return player.isFlying();
+    public static boolean hasFly(Player player){
+        return player.getAllowFlight();
     }
+
 }

@@ -1,27 +1,55 @@
 Config:
   options:
-    # IMPORTANT! RESTRICTED GAMEMODES NAMES **NEED** TO BE IN CAPITAL LETTER, OTHERWISE THE PLUGIN
-    # WILL FAIL!
+    #Should only use this mode when the developer (me) asks you to.
+    #This can make a BIG spam on your console, so be careful.
+    debug: false
     #To turn off this option just write a "[]"
     # gamemode-restriction: []
     gamemode-restriction:
-      - CREATIVE
-    # Should the plugin send a message to the target when someone else activates flight mode?
+      - cReATivE
+    # Will the plugin send a message to the target when someone else activates flight mode?
     send-message-to-target-on: true
 
-    # Should the plugin send a message to the target when someone else deactivates flight mode?
+    # Will the plugin send a message to the target when someone else deactivates flight mode?
     send-message-to-target-off: true
 
+    #You should use this to prevent player from receiving damage when disabling /fly. Useful when integrated with WorldGuard,
+    #because the plugin automatically disables /fly when the player leaves the region.
+    #(It is going to be configurable in future updates)
+    inmunity-to-fall-damage: 5 #In seconds
+
+    #Should the plugin deactivate player's flight-mode when he enters a PvP or PvE?
+    deactivate-fly-mode-pvp:
+      enabled: true
+      #How many seconds the player can't enable flight-mode after entering pvp
+      time-of-restriction: 5
+  #Want a hook to be added? Contact me on Discord (elsus1719) or spigot Discussion page.
+  #See spigot page to see what the hooks do
+  #If you will use a Combat management plugin it is recommended to turn off deactivate-fly-mode-pvp.enabled
+  #option.
+  hooks:
+    WorldGuard: true
   lang:
     prefix: "&7[&bAmazingFly&7] "
     restricted-gamemode: "&cYou can't use &6/fly &cwhile using this gamemode."
-    no-permissions: "&cYou don't have necessary permission. &7(amazingfly.use)"
+    no-permissions: "&cYou don't have necessary permissions."
     console-error: "&cYou can't use this command on console."
-    plugin-reload: "&aThe plugin was reloaded successfully."
+    command-bad-usage: "&cIncorrect usage. Usage: /{command} {subcommands}"
+    restriction-seconds: "&cSorry, you can't use this command while in PvP. Time remaining: &6{SECONDS}s"
+    pvp-deactivate: "&cYour flight-mode was deactivated because you entered in PvP/PvE."
+    plugin-reload: "&aThe plugin was reloaded successfully. For major changes (like hooks) restart the server. &a&lNever /reload."
     fly-activated: "&fYou &aactivated &ffly mode."
     fly-deactivated: "&fYou &cdeactivated &ffly mode."
     fly-activated-other: "&aYou activated fly mode to {PLAYER}."
     fly-deactivated-other: "&cYou deactivated fly mode to {PLAYER}."
-    fly-activated-sender: "&a{SENDER} has activated fly mode for you." #send-message-to-target-on needs to be true.
-    fly-deactivated-sender: "&c{SENDER} has deactivated fly mode for you." #send-message-to-target-off needs to be true.
+    fly-activated-target: "&a{SENDER} has activated fly mode for you." #send-message-to-target-on needs to be true.
+    fly-deactivated-target: "&c{SENDER} has deactivated fly mode for you." #send-message-to-target-off needs to be true.
     fly-others-error: "&c{PLAYER} doesn't exist."
+    fly-worldguard-flag-error: "&cSorry, but you can't use /rfly in this region."
+    fly-worldguard-deactivated: "&fYour fly mode was deactivated because you have left the fly region."
+    #!! For future update !!
+    temp-fly-activated: "&fYou &aactivated &ftemp-fly mode for {TIME}."
+    temp-fly-deactivated: "&fYou &cdeactivated &ftemp-fly mode."
+    temp-fly-activated-other: "&fYou &aactivated &ftemp-fly mode for {TIME} for {PLAYER}."
+    temp-fly-deactivated-other: "&fYou &cdeactivated &ftemp-fly mode for {PLAYER}."
+    #!! For future update !!
