@@ -19,7 +19,7 @@ public class PlaceholderAPI extends PlaceholderExpansion {
 
     @Override
     public @NotNull String getVersion() {
-        return "1.2.0";
+        return "1.2.1";
     }
 
     @Override
@@ -27,12 +27,22 @@ public class PlaceholderAPI extends PlaceholderExpansion {
         if (params.equalsIgnoreCase("isflying")) {
             return String.valueOf(FlyUtils.hasFly(player));
         }else if(params.startsWith("isflying_")){
-            String targetName = params.substring("flymode".length());
+            String targetName = params.substring("isflying_".length());
             Player target = Bukkit.getPlayer(targetName);
             if(target == null){
                 return "Player is not online";
             }else{
                 return String.valueOf(FlyUtils.hasFly(target));
+            }
+        }else if(params.startsWith("canfly")){
+            return String.valueOf(player.hasPermission("amazingfly.use"));
+        }else if(params.startsWith("canfly_")){
+            String targetName = params.substring("canfly_".length());
+            Player target = Bukkit.getPlayer(targetName);
+            if(target == null){
+                return "Player is not online";
+            }else{
+                return String.valueOf(target.hasPermission("amazingfly.use"));
             }
         }
 
